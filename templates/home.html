@@ -1,21 +1,24 @@
 {% extends '_base.html' %}
 
+{% load static %}
+
 {% block title %}Home{% endblock title %}
 
 {% block content %}
 
 <h1>Homepage</h1>
+<img class="bookcover" src="{% static 'images/action-thriller-book-cover-design-template-3675ae3e3ac7ee095fc793ab61b812cc_screen.jpg' %}">
 
 {% if user.is_authenticated %}
     
     Hi {{ user.email }}!
-    <p><a href="{% url 'logout' %}">Log Out</a></p>
+    <p><a href="{% url 'account_logout' %}">Log Out</a></p>
 
 {% else %}
 
     <p>You are not logged in</p>
-    <a href="{% url 'login' %}">Log In</a>
-    <a href="{% url 'signup' %}">Sign Up</a>
+    <p><a href="{% url 'account_login' %}">Log In</a> |
+    <a href="{% url 'account_signup' %}">Sign Up</a></p>
 
 {% endif %}
 

@@ -21,15 +21,12 @@ urlpatterns = [
     #Admin
     path('admin/', admin.site.urls),
 
-    path('accounts/', include('django.contrib.auth.urls')), 
+    # User management 
+    path('accounts/', include('allauth.urls')), 
 
-
-    #Local Apps
     
     #Static pages
     path('', include('pages.urls')), 
 
-    #Sign up
-    path('accounts/', include('users.urls')), # new
     
 ]
