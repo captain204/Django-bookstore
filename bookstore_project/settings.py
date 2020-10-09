@@ -45,8 +45,9 @@ INSTALLED_APPS = [
     'allauth.account', 
     
     #Local
-    'users.apps.UsersConfig',
-    'pages.apps.PagesConfig',  
+    'users',
+    'pages',
+    'books',   
     
 ]
 
@@ -88,9 +89,13 @@ WSGI_APPLICATION = 'bookstore_project.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'bookstoredb',
+        'USER': 'bookstoreuser',
+        'PASSWORD': 'passme',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
